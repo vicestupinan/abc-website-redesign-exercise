@@ -1,0 +1,42 @@
+---
+import Gift from "../icons/Gift.astro";
+import Search from "../icons/Search.astro";
+import User from "../icons/User.astro";
+---
+
+<header class="bg-white h-[90px] flex items-center">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <a href="/" class="flex">
+      <img src="../../public/logo.webp" alt="ABC PRODEIN Logo" class="h-15 w-auto md:h-auto"/>
+    </a>
+
+    <nav
+      class="hidden md:flex space-x-15 text-blue-900 items-center"
+    >
+      <a href="#" class="font-bold">INICIO</a>
+      <a href="#" class="flex flex-col items-center leading-none">
+        <span>¿Quiénes</span>
+        <span>somos?</span>
+      </a>
+      <a href="#" class="flex flex-col items-center leading-none">
+        <span>Nuestros</span>
+        <span>beneficios</span>
+      </a>
+      <a href="#" class="">Voluntarios</a>
+      <a href="#" class="">Contáctanos</a>
+      <a href="#" class="">Colegio</a>
+      <a href="#" class="">Noticias</a>
+    </nav>
+
+    <div class="hidden md:flex items-center space-x-10">
+      <a href="#" class="flex flex-col font-semibold bg-yellow-500 text-blue-900 px-1 py-4 rounded-xl items-center shadow-lg relative top-1">
+        <Gift />
+        <span>Donaciones</span>
+      </a>
+      <div class="flex space-x-4">
+        <User />
+        <Search />
+      </div>
+    </div>
+  </div>
+</header>
