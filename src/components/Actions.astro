@@ -1,23 +1,117 @@
 ---
+import Heart from "../icons/Heart.astro";
+import Apple from "../icons/Apple.astro";
+import Books from "../icons/Books.astro";
+import Idea from "../icons/Idea.astro";
+
 const actions = [
   {
-    title: "Hola",
-    description: "Hola",
+    icon: Books,
+    color: "text-blue-900",
+    title: "EDUCACIÓN",
     link: "/",
+    btnColor: "bg-blue-900",
   },
   {
-    title: "Hola2",
-    description: "Hola2",
+    icon: Heart,
+    color: "text-teal-500",
+    title: "PROVIDA",
     link: "/",
+    btnColor: "bg-teal-500",
+  },
+  {
+    icon: Idea,
+    color: "text-blue-900",
+    title: "EMPRENDIMIENTO",
+    link: "/",
+    btnColor: "bg-blue-900",
+  },
+  {
+    icon: Apple,
+    color: "text-teal-500",
+    title: "NUTRICIÓN",
+    link: "/",
+    btnColor: "bg-teal-500",
+  },
+];
+
+const cities = [
+  {
+    icon: Books,
+    color: "text-yellow-500",
+    title: "POPAYÁN",
+  },
+  {
+    icon: Heart,
+    color: "text-yellow-500",
+    title: "MEDELLÍN",
+  },
+  {
+    icon: Idea,
+    color: "text-yellow-500",
+    title: "BOGOTÁ",
+  },
+  {
+    icon: Apple,
+    color: "text-yellow-500",
+    title: "CALI",
   },
 ];
 ---
 
-<section>
+<div>
   <section>
-    <header>Hola</header>
+    <header
+      class="flex flex-col md:flex-row justify-center bg-blue-900 text-white p-8"
+    >
+      <h3>ABC PRODEIN</h3>
+      <p>Con la fe en Dios guiamos al ser humano el amor</p>
+      <p>auténtico, recobrando su visión de Esperanza</p>
+    </header>
+    <section class="flex flex-col items-center">
+      <h3 class="flex flex-col items-center p-8">
+        <span class="flex text-4xl text-yellow-500 font-semibold"
+          >Conoce sobre nuestros</span
+        >
+        <span class="text-4xl text-blue-900 font-bold">campos de acción</span>
+      </h3>
+      <div class="flex flex-wrap justify-evenly w-full pt-8 pb-16">
+        {
+          actions.map((action) => (
+            <div class="flex flex-col items-center sm:m-0 m-2">
+              <action.icon color={`${action.color}`} />
+              <h4 class={`${action.color} font-bold pb-6`}>{action.title}</h4>
+              <a
+                href={action.link}
+                class={`${action.btnColor} text-white font-semibold rounded-full px-4 py-1`}
+              >
+                Ver más
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section class="flex flex-col items-center">
+      <div class="flex flex-col items-center p-8">
+        <h3 class="flex md:flex-row flex-col items-center text-4xl">
+          <span class="text-yellow-500 font-semibold">Sedes a&nbsp;</span>
+          <span class="text-blue-900 font-semibold">nivel nacional</span>
+        </h3>
+        <p class="text-gray-400 text-lg">
+          En cada ciudad acogemos un programa especial
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-evenly w-full pt-8 pb-16">
+        {
+          cities.map((city) => (
+            <div class="flex flex-col items-center sm:m-0 m-2">
+              <city.icon color={`${city.color}`} />
+              <h4 class={`${city.color} font-bold`}>{city.title}</h4>
+            </div>
+          ))
+        }
+      </div>
+    </section>
   </section>
-  <section>
-    <header>Hola2</header>
-  </section>
-</section>
+</div>
